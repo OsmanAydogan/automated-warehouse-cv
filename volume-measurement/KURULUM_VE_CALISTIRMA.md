@@ -89,7 +89,7 @@ python -m src.core.measure_object_size
 
 ---
 
-## 📁 Çıktılar Nereye Kaydedilir?
+##  Çıktılar Nereye Kaydedilir?
 
 - **Fotoğraflar**: `Main/hacim_olcumleri/hacim_olcumu_1/` vb.
 - **Veritabanı**: `Main/box_measurements.db`
