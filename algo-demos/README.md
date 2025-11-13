@@ -1,4 +1,4 @@
-# 🏭 Depo Optimizasyon Simülasyonu - PART 2 (Optimizasyon)
+#  Depo Optimizasyon Simülasyonu - PART 2 (Optimizasyon)
 > **Proje Bölümü 2/2**: Depo simülasyon sistemi. Part 1 için bkz. `volume-measurement` klasörü.
 > 
 > **Bu, volume-measurement'in devamıdır!** Ölçüm sisteminden gelen verilerin depo optimizasyonu için kullanıldığı web tabanlı simülasyon arayüzü.
