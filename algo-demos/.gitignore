@@ -1,0 +1,21 @@
+# CSV veri dosyaları (örnek - üretilmiş)
+*.csv
+!sample_data.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (eğer kullanılırsa)
+node_modules/
+package-lock.json
+
+# Tarayıcı cache
+.cache/
+.parcel-cache/

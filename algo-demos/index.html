@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Kutu Yerleştirme Optimizasyonu Simülasyonu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>3D Kutu Yerleştirme Optimizasyonu</h1>
+            <p>Hibrit Algoritma ile Depo Optimizasyonu Simülasyonu</p>
+        </div>
+        <!-- Veri Yükleme Bölümü -->
+        <div class="panel">
+            <h2>📁 Veri Yükleme</h2>
+            <div class="upload-section">
+                <div class="upload-box" onclick="document.getElementById('warehouseFile').click()">
+                    <input type="file" id="warehouseFile" class="file-input" accept=".csv" />
+                    <h3>🏭 Depo Verisi</h3>
+                    <p>CSV dosyası yükleyin</p>
+                    <small>Depo Adı, Genişlik, Yükseklik, Uzunluk</small>
+                </div>
+                <div class="upload-box" onclick="document.getElementById('boxFile').click()">
+                    <input type="file" id="boxFile" class="file-input" accept=".csv" />
+                    <h3>📦 Kutu Verisi</h3>
+                    <p>CSV dosyası yükleyin</p>
+                    <small>Kutu ID, Boyutlar, Ağırlık, Öncelik, Max Üst Yük</small>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn" onclick="startSimulation()" id="startBtn" disabled>
+                    🚀 Simülasyonu Başlat
+                </button>
+                <button class="btn" onclick="resetSimulation()" id="resetBtn">
+                    🔄 Sıfırla
+                </button>
+            </div>
+        </div>
+        <!-- Yüklenen Veriler -->
+        <div class="panel hidden" id="dataPanel">
+            <h2>📊 Yüklenen Veriler</h2>
+            <div id="dataDisplay"></div>
+        </div>
+        <!-- Kutu Sınıflandırması -->
+        <div class="panel hidden" id="classificationPanel">
+            <h2>🏷️ Kutu Sınıflandırması</h2>
+            <div class="classification-section" id="classificationDisplay"></div>
+        </div>
+        <!-- Alan Tahsisi -->
+        <div class="panel hidden" id="allocationPanel">
+            <h2>📐 Alan Tahsisi (Pareto Prensibi)</h2>
+            <div id="allocationDisplay"></div>
+        </div>
+        <!-- 3D Görselleştirme -->
+        <div class="panel hidden" id="visualizationPanel">
+            <h2>🎯 3D Yerleştirme Simülasyonu</h2>
+            <div class="viewer-container" id="viewerContainer">
+                <div class="controls">
+                    <button onclick="toggleAnimation()">⏯️ Animasyon</button>
+                    <button onclick="resetView()">🔄 Görünüm</button>
+                    <button onclick="toggleWireframe()">🔲 Wireframe</button>
+                </div>
+            </div>
+            <div class="legend" id="legend"></div>
+        </div>
+        <!-- Sonuçlar -->
+        <div class="panel hidden" id="resultsPanel">
+            <h2>📈 Simülasyon Sonuçları</h2>
+            <div class="stats" id="statsDisplay"></div>
+            <div class="table-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Sıra</th>
+                            <th>Kutu ID</th>
+                            <th>Pozisyon (X,Y,Z)</th>
+                            <th>Boyutlar</th>
+                            <th>Durum</th>
+                            <th>Kısıt Kontrolleri</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Yükleme Animasyonu -->
+        <div class="panel hidden" id="loadingPanel">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Simülasyon çalışıyor...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
