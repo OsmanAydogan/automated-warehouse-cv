@@ -3,7 +3,7 @@
 > 
 > **Bu, volume-measurement'in devamıdır!** Ölçüm sisteminden gelen verilerin depo optimizasyonu için kullanıldığı web tabanlı simülasyon arayüzü.
 
-## 📋 Bu Uygulama Nedir?
+##  Bu Uygulama Nedir?
 
 **CSV formatında yüklenen depo ve kutu verilerini** kullanarak:
 - Kutuları **öncelik seviyesine göre sınıflandırır** (Yüksek, Orta, Düşük)
